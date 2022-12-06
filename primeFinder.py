@@ -1,4 +1,5 @@
 print("\n")
+limit = 0
 limit = int(input("Please enter the ceiling\n"))
 primes = []
 for a in range(2,limit+1):
