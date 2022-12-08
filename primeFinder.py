@@ -2,18 +2,19 @@ print("\n")
 limit = 0
 limit = int(input("Please enter the ceiling\n"))
 primes = []
-for a in range(2,limit+1):
-    if a == 2:
-        primes.append(a)
+counter = 2
+while counter <= limit:
+    if counter == 2:
+        primes.append(counter)
     else:
         prime = True;
-        for b in range(0,len(primes)):
-            if a%primes[b]==0:
+        for b in primes:
+            if counter%b==0:
                 prime = False;
                 break
         if prime:
-            primes.append(a)
-output = "The prime numbers up to "+str(limit)+" are: "
-for a in range(0,len(primes)):
-    output += str(primes[a])+" "
-print(output)
+            primes.append(counter)
+    counter +=1
+print("The prime numbers up to "+str(limit)+" are: ")
+for a in primes:
+    print(str(a),end = " ")
